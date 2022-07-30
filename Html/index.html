@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Student Management</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section class="head">
+      <div class="container bg-info pt-3 pb-2">
+        <h3 class="text-center text-white">Add Student Form</h3>
+      </div>
+    </section>
+    <section class="addStudent">
+      <div class="container">
+        <form class="needs-validation" novalidate id="addStudentForm">
+          <div class="row">
+            <div class="col-md-4 mt-4">
+              <div class="input-group">
+                <span class="input-group-text bg-info text-white w-25"
+                  >Name:
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Student Name" required
+                  name="name"
+                />
+                <div class="invalid-feedback ms-5 ps-5">
+                    Please enter student name
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 mt-4">
+              <div class="input-group">
+                <span class="input-group-text bg-info text-white w-25"
+                  >Class:
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Student Class" required 
+                  name="class"
+                />
+                <div class="invalid-feedback ms-5 ps-5">
+                    Please enter class name
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 mt-4">
+              <div class="input-group">
+                <span class="input-group-text bg-info text-white w-25"
+                  >Subjects:
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Student Subjects" required
+                  name="subjects"
+                />
+                <div class="invalid-feedback ms-5 ps-5">
+                    Please enter at least one subject
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4 mt-4">
+              <div class="input-group">
+                <span class="input-group-text bg-info text-white w-25"
+                  >Phone:
+                </span>
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Student Phone" 
+                  required
+                  minlength="10"
+                  maxlength="10"
+                  name="phone"
+                />
+                <div class="invalid-feedback ms-5 ps-5">
+                    Phone number is required
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 text-center mt-4">
+              <input type="button" id="addStudentBtn" value="Save" class="btn btn-info" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <hr />
+    </section>
+
+    <section class="list-section">
+      <div class="container bg-info pt-3 pb-2">
+        <h3 class="text-center text-white">Students</h3>
+      </div>
+    </section>
+    <section class="studentList mt-4">
+      <div class="container">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Sr.No.</th>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Subjects</th>
+                <th>Phone Number</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              <tr>
+                        <td colspan = "6">
+                            No Data Available
+                        </td>
+                    </tr> 
+             
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/addStudent.js"></script>
+  </body>
+</html>
