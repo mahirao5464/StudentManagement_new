@@ -1,14 +1,16 @@
-var studentStore = [];
+var students = [];
+var localStorageKey = "students";
+var nextStudentSrNo = 1;
 window.addEventListener("load", function () {
-  let studentsString = this.localStorage.getItem("students");
-  let students = JSON.parse(studentsString) || [];
-  console.log(student);
-  students.forEach((el)=>{
-      addStudent(student, index);
+  let studentsString = localStorage.getItem(localStorageKey);
+  students = JSON.parse(studentsString) || [];
+ 
+  students.forEach((student)=>{
+      addStudent(student);
   });
 
 
-  var nextStudentSrNo = 1;
+  
   var addStudentBtn = document.getElementById("addStudentBtn");
 
   addStudentBtn.addEventListener("click", function () {
@@ -17,6 +19,7 @@ window.addEventListener("load", function () {
     const formDataObj = {};
     const myFormData = new FormData(document.querySelector("#addStudentForm"));
     myFormData.forEach((value, key) => (formDataObj[key] = value));
+    addToLocalStorage(formDataObj);
     addStudent(formDataObj);
   });
 
@@ -29,8 +32,16 @@ window.addEventListener("load", function () {
     return true;
   };
 
+function addToLocalStorage(student){
+  students.push(student);
+  localStorage.setItem(localStorageKey,JSON.stringify(students));
+}
+function isStudentExists(PhoneNumber){
+
+}
   function addStudent(student) {
     let tableBody = document.getElementById("tbody");
+    document.getElementById("nodatamsg").style.display="none";
     let newRow = `
             <tr>
                 <td>${nextStudentSrNo++}</td>
